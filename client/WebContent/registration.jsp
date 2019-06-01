@@ -86,7 +86,7 @@ phone number:
 Country
 </td>
 <td>
-  <select  value="select"name="country" >
+   <input type="text" name="country" id="country">
   
 
 </td>
@@ -95,7 +95,7 @@ Country
 State
 </td>
 <td>
-  <select  value="select"name="country" >
+  <input type="text" name="state" id="state">
   
 
 </td>
@@ -106,12 +106,11 @@ State
 City
 </td>
 <td>
-  <select  value="select"name="country" >
+  <input type="text" name="city" id="city">
   
 
 </td>
 
-</tr>
 </tr>
 
 <tr>
@@ -121,19 +120,13 @@ City
 </textarea></td>
 
 </tr>
-<tr>
-<td></td>
-<td>
-</td>
+
 
 </tr>
-<tr>
-<td></td>
-</tr>
+
 <tr>
 <td>
   gender:
-
 </td>
 <td>
   <input type="radio" name="gender" id="M">Male

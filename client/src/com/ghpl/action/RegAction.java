@@ -47,7 +47,7 @@ public class RegAction extends HttpServlet {
 
 		if(request.getParameter("username")!= null &&  !request.getParameter("username").equals("")) {
 			username=request.getParameter("username");
-			emp.setUser(username);
+			emp.setUsername(username);
 		}
 		if(request.getParameter("password")!= null) {
 			password=request.getParameter("password");
