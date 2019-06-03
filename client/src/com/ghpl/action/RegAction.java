@@ -1,6 +1,8 @@
 package com.ghpl.action;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,6 +44,14 @@ public class RegAction extends HttpServlet {
 			String username=null;
 			String password=null;			
 			String useremail=null;
+			String phnNbr=null;
+			String country=null;
+			String state=null;
+			String city=null;
+			String address=null;
+			String gender=null;
+
+			
 		  EMP emp =null;
 			emp = new EMP();
 
@@ -49,17 +59,57 @@ public class RegAction extends HttpServlet {
 			username=request.getParameter("username");
 			emp.setUsername(username);
 		}
-		if(request.getParameter("password")!= null) {
+		if(request.getParameter("password")!= null &&  !request.getParameter("password").equals("")) {
 			password=request.getParameter("password");
+			emp.setPassword(password);
+
 		}
-		if(request.getParameter("useremail")!= null) {
+		if(request.getParameter("useremail")!= null &&  !request.getParameter("password").equals("")) {
 			useremail=request.getParameter("useremail");
+			emp.setUsername(username);
 		}
-		
+		if(request.getParameter("phnNbr")!= null &&  !request.getParameter("phnNbr").equals("")) {
+			phnNbr=request.getParameter("phnNbr");
+			emp.setMobileno(phnNbr);
+
+		}
+		if(request.getParameter("country")!= null&&  !request.getParameter("country").equals("")) {
+			country=request.getParameter("country");
+			emp.setCountry(country);
+
+		}
+		if(request.getParameter("state")!= null &&  !request.getParameter("state").equals("")) {
+			state=request.getParameter("state");
+			emp.setState(state);
+
+		}
+		if(request.getParameter("city")!= null &&  !request.getParameter("city").equals("")) {
+			city=request.getParameter("city");
+			emp.setCity(city);
+
+		}
+		if(request.getParameter("address")!= null&&  !request.getParameter("address").equals("")) {
+			address=request.getParameter("address");
+			emp.setAddress(address);
+
+		}
+		if(request.getParameter("gender")!= null&&  !request.getParameter("gender").equals("")) {
+			gender=request.getParameter("gender");
+			emp.setGender(gender);
+
+		}
 		int insertSatus =0;
-		if(username!=null ) {
+		if(emp!=null ) {
 			insertSatus  =  EmpDAOManager.addEMP(emp, insertSatus);
 		}
+		
+		RequestDispatcher rd = null;
+		if(insertSatus!=0) {
+			rd = request.getRequestDispatcher("./success.jsp");
+		}else {
+			rd = request.getRequestDispatcher("./failure.jsp");
+		}
+		
 		
 		}
 		catch (Exception e) {

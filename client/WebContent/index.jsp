@@ -8,16 +8,19 @@ table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
+#topMenu{
+	background-color: #4CAF50;
+}
 </style>
 </head>
 <body>
 
-<table style="width:100%" height="650">
+<table style="width:100%" height="650" >
  <tr>
     <th colspan="100%" height="70" >Header</th>
     
   </tr>
-  <tr>
+  <tr id= "topMenu">
     <th height="30" ><a href="file:///home/murali/Documents/murali/login.jsp" target="iframe_a">User</a></th>
     <th height="30" ><a href="registration.jsp" target="iframe_a">Registration</a></th> 
     <th height="30" ><a href="login.jsp" target="iframe_a">LogIn</a></th>
@@ -32,7 +35,7 @@ table, th, td {
   </tr>
   
     <th>
-<a href="file:///home/murali/Documents/murali/login.jsp" target="iframe_a">EditUser</a></th>
+<a href="testing.jsp" target="iframe_a">EditUser</a></th>
    
   </tr>
   <tr>

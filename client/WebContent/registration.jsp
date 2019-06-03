@@ -6,33 +6,17 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.3.js"></script>
-<script type="text/javascript">
-$('document').ready(function(){
-	
-	
-	$("#regbtn").click(function()
-			{
-		var us  =$("#username").val();
-		if (us==''){
-			alert("please enter the username");	
-			return false;
-		}
-		var pwd  =$("#password").val();
-		if (pwd==''){
-			alert("please enter the password");	
-			return false;
-		}
-	});
-});
-</script>
+<script type="text/javascript"></script>
+<script src="jQvalidation/registration.js"></script>
+
 </head>
 <body>
 
-<form action="./RegAction" method="post">
+<form id="regForm" action="./RegAction" method="post">
 <table>
 <tr>
 <td>
-  user name:
+  User name:
 
 </td>
 <td>
@@ -43,7 +27,7 @@ $('document').ready(function(){
 
 <tr>
 <td>
-  password:
+  Password:
 
 </td>
 <td>
@@ -57,14 +41,14 @@ $('document').ready(function(){
 
 </td>
 <td>
-  <input type="password" name="re-password" id="re-password">
+  <input type="password" name="confirmpassword" id="confirmpassword">
 
 </td>
 </tr>
 <tr>
 <td>
 
-  user email:
+  User email:
 </td>
 <td>
   <input type="text" name="useremail" id="useremail">
@@ -73,7 +57,7 @@ $('document').ready(function(){
 </tr>
 <tr>
 <td>
-phone number:
+Phone number:
 </td>
 <td>
   <input type="text" name="phnNbr" id="phnNbr">
@@ -83,54 +67,76 @@ phone number:
 </tr>
 <tr>
 <td>
-Country
+Country:
 </td>
 <td>
-   <input type="text" name="country" id="country">
-  
+ <div class="col-md-4" >
+    <select class="country">
+          <option value=''><strong>Select</strong></option>
+          <option value="India">India</option>
+          <option value="Australia">Australia</option>
+          <option value="America">America</option>
+          <option value="Japan">Japan</option>
+          
+    </select>
+</div> 
 
 </td>
 <tr>
 <td>
-State
+State:
 </td>
 <td>
-  <input type="text" name="state" id="state">
-  
+<div class="col-md-4" >
+    <select class="state">
+          <option value=''><strong>Select</strong></option>
+    </select>
+</div>  
 
 </td>
 
 </tr>
 <tr>
 <td>
-City
+City:
 </td>
 <td>
-  <input type="text" name="city" id="city">
-  
+<div class="col-md-4" >
+    <select class="city">
+          <option value=''><strong>Select</strong></option>
+    </select>
+</div>  
 
 </td>
 
 </tr>
-
-<tr>
-<td>Address</td>
-<td>
-<textarea rows="4" cols="50" name="comment" >
-</textarea></td>
-
-</tr>
-
-
-</tr>
-
 <tr>
 <td>
-  gender:
+  Gender:
 </td>
 <td>
   <input type="radio" name="gender" id="M">Male
   <input type="radio" name="gender" id="F">Female
+
+</td>
+</tr>
+
+<tr>
+<td>Address:</td>
+<td>
+<textarea rows="4" cols="50" name="address" id="address">
+</textarea></td>
+
+</tr>
+
+<tr>
+<td>
+   Course:
+</td>
+<td>
+  <input type="checkbox" name="a" id="a">A
+  <input type="checkbox" name="b" id="b">B
+  <input type="checkbox" name="c" id="c">C
 
 </td>
 </tr>
